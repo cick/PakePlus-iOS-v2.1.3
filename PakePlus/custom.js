@@ -25,18 +25,3 @@ window.open = function (url, target, features) {
 
 document.addEventListener('click', hookClick, { capture: true })
 
-
-
-function setupFullScreen(videoElement) {
-  videoElement.addEventListener('fullscreenchange', handleFullScreenChange);
-  videoElement.addEventListener('MSFullscreenChange', handleFullScreenChange); // for IE/Edge
-}
-
-function handleFullScreenChange() {
-  if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
-    console.log('Entered fullscreen mode');
-  } else {
-    console.log('Exited fullscreen mode');
-  }
-}
-
